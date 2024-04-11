@@ -3,13 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML 5 Boilerplate</title>
+    <title>gradient/color.js test</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://colorjs.io/dist/color.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <p id="test">TEST</p>
+    <div id="root">
+      <div id="sch" class="scheme">
+        <!--<div id="overlay">-->
+        <h1>Colour Scheme Generator</h1>
+        <a href="../index.html"><button>Go Home</button></a>
+        <a href="../picker/picker.html"><button>Go To Picker</button></a>
+        <a href="../features/features.html"><button>Go To Features</button></a>
+
+        <div class="navbar top-nav s-nav">
+          <button type="button" name="button">monochrome</button>
+          <button type="button" name="button">monochrome-dark</button>
+          <button type="button" name="button">monochrome-light</button>
+          <button type="button" name="button">analogic</button>
+        </div>
+
+        <div class="navbar mid-nav s-nav">
+          <button type="button" name="button">complement</button>
+          <button type="button" name="button">analogic-complement</button>
+          <button type="button" name="button">triad</button>
+          <button type="button" name="button">quad</button>
+        </div>
+
+        <div class="navbar num-nav">
+          <button type="button" name="button">2 colours</button>
+          <button type="button" name="button">3 colours</button>
+          <button type="button" name="button">4 colours</button>
+          <button type="button" name="button">5 colours</button>
+        </div>
+
+        <!--</div>-->
+        <p class="scheme">
+          Colour scheme (default mode: "monochrome", options: "monochrome-dark",
+          "monochrome-light", "analogic", "complement", "analogic-complement",
+          "triad", "quad")
+        </p>
+        <p class="scheme">Default count: 5 colors</p>
+        <div id="pickerS" class="scheme picker"></div>
+        <!--
+    <input type="text" name="" value="" placeholder="enter a hex colour" id="colour1" class="scheme" onclick="reset()">
+    <input type="text" name="" value="" placeholder="enter a mode" id="mode" class="scheme" onclick="reset()">
+    <input type="button" name="" value="Submit" id="submit1" onclick="submit(event)" class="scheme">
+    <br>-->
+        <div id="multi" class="scheme"></div>
+      </div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
