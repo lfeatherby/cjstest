@@ -1,9 +1,10 @@
-const app = document.getElementById('root')
-var multi = document.getElementById('multi')
+
+const app = document.getElementById('root');
+var multi = document.getElementById("multi");
 var colorPickerS = new iro.ColorPicker('#pickerS');
-var currentColour = ''
-var currentMode = ''
-var currentCount = ''
+var currentColour = '';
+var currentMode = '';
+var currentCount = '';
 
 $(document).ready(function () {
     $(".s-nav button").click(function () {
@@ -52,6 +53,37 @@ colorPickerS.on(['input:end'], function (color) {
     // Send request
     request.send()
 });
+
+function submit(event) {
+    // Create a request variable and assign a new XMLHttpRequest object to it.
+    var request = new XMLHttpRequest()
+    var x = event.target;
+    currentColour = document.getElementById('colour').value
+    multi.innerHTML = ''
+    // Open a new connection, using the GET request on the URL endpoint
+    currentColour = document.getElementById('colour1').value
+    //currentMode = document.getElementById('mode').value
+    //currentCount = document.getElementById('count').value
+    var full = 'https://www.thecolorapi.com/scheme?hex=' + currentColour + '&mode=' + currentMode + '&count=' + currentCount;
+    console.log(full);
+    request.open('GET', full, true)
+
+    request.onload = function () {
+        // Begin accessing JSON data here
+        var data = JSON.parse(this.response)
+        //console.log(data)
+
+        for (var i = 0; i < data.count; i++) {
+            var pic = document.createElement('img')
+            pic.src = data.colors[i].image['bare']
+            multi.appendChild(pic);
+        }
+    }
+
+    // Send request
+    request.send()
+
+}
 
 function on() {
     document.getElementById("overlay").style.display = "block";

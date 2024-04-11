@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://colorjs.io/dist/color.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body>
     <p id="test">TEST</p>
@@ -15,13 +15,13 @@
       <div id="sch" class="scheme">
         <!--<div id="overlay">-->
         <h1>gradient Generator</h1>
-        <div class="navbar num-nav">
-          <input
-            type="text"
-            name="numSteps"
-            id="numSteps"
-            placeholder="How many intermediate colours would you like?" />
+        <div class="">
+          <label for="numSteps">How many intermediate colours would you like? (5 to 20): </label>
+          <input type="range" name="numSteps" id="numSteps" min="5" max="20" />
+          <p>Steps: <output id="stepsVal"></output></p>
         </div>
+        <br />
+        <br />
         <div class="navbar num-nav">
           <button type="button" name="button">2 colours</button>
           <button type="button" name="button">3 colours</button>
@@ -31,9 +31,8 @@
 
         <!--</div>-->
         <p class="scheme">
-          Colour scheme (default mode: "monochrome", options: "monochrome-dark",
-          "monochrome-light", "analogic", "complement", "analogic-complement",
-          "triad", "quad")
+          Colour scheme (default mode: "monochrome", options: "monochrome-dark", "monochrome-light",
+          "analogic", "complement", "analogic-complement", "triad", "quad")
         </p>
         <p class="scheme">Default count: 5 colors</p>
         <div id="pickerS" class="scheme picker"></div>
