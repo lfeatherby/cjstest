@@ -25,7 +25,6 @@ $(document).ready(function () {
     });
     $("#numSteps").on("input", function () {
         $("#stepsVal").text($(this).val());
-        console.log($(this).val());
         currentCount = $(this).val();
     });
 });
