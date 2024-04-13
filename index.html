@@ -13,7 +13,12 @@
     <p id="test">TEST</p>
     <div id="root">
       <div id="sch" class="scheme">
-        <!--<div id="overlay">-->
+        <div id="gradBoxes"></div>
+        <button onclick="on()" id="showOverlay">on</button>
+        <div id="overlay">
+          <div id="pickerG" class="picker"></div>
+          <button onclick="off()" id="hideOverlay">off</button>
+        </div>
         <h1>gradient Generator</h1>
         <div class="">
           <label for="numSteps">How many intermediate colours would you like? (5 to 20): </label>
@@ -29,7 +34,6 @@
           <button type="button" name="button">5 colours</button>
         </div>
 
-        <!--</div>-->
         <p class="scheme">
           Colour scheme (default mode: "monochrome", options: "monochrome-dark", "monochrome-light",
           "analogic", "complement", "analogic-complement", "triad", "quad")
