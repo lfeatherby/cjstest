@@ -1,8 +1,10 @@
 
 const app = document.getElementById('root');
 var multi = document.getElementById("multi");
-var pic = document.createElement('img')
-var colorPickerS = new iro.ColorPicker('#pickerS');
+var pic = document.createElement('img');
+var colorPickerG = new iro.ColorPicker('#pickerG');
+var colour1 = '';
+var colour2 = '';
 var currentColour = '';
 var currentMode = '';
 var currentCount = '';
@@ -29,7 +31,7 @@ $(document).ready(function () {
     });
 });
 
-colorPickerS.on(['input:end'], function (color) {
+colorPickerG.on(['input:end'], function (color) {
     // log the current color as a HEX string
     var request = new XMLHttpRequest()
     currentColour = color.hexString.slice(1)
@@ -86,12 +88,19 @@ function submit(event) {
 
 }
 
-function on() {
-    document.getElementById("overlay").style.display = "block";
+function on1() {
+    document.getElementById("startOverlay").style.display = "block";
+}
+
+function on2() {
+    document.getElementById("endOverlay").style.display = "block";
 }
 
 function off() {
-    document.getElementById("overlay").style.display = "none";
+    var overlays = document.getElementsByClassName("overlay");
+    for (var j = 0; j < overlays.length; j++) {
+        overlays[j].style.display = "none";
+    }
 }
 
 function reset() {

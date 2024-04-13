@@ -14,13 +14,15 @@
     <div id="root">
       <div id="sch" class="scheme">
         <div id="gradBoxes">
-          <div id="box1" class="boxy"></div>
-          <div id="box2" class="boxy"></div>
+          <div id="box1" class="boxy" onclick="on1()"></div>
+          <div id="box2" class="boxy" onclick="on2()"></div>
         </div>
-        <button onclick="on()" id="showOverlay">on</button>
-        <div id="overlay">
+        <div id="startOverlay" class="overlay">
           <div id="pickerG" class="picker"></div>
-          <button onclick="off()" id="hideOverlay">off</button>
+          <button onclick="off()" id="hideSOverlay">off</button>
+        </div>
+        <div id="endOverlay" class="overlay">
+          <button onclick="off()" id="hideEOverlay">off2</button>
         </div>
         <h1>gradient Generator</h1>
         <div class="">

@@ -65,7 +65,7 @@ img {
     border: none;
 }
 
-#overlay {
+.overlay {
     position: fixed;
     /* Sit on top of the page content */
     display: none;
@@ -85,7 +85,9 @@ img {
 }
 
 #gradBoxes {
-    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    width: auto;
 }
 
 .boxy {
