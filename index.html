@@ -18,16 +18,17 @@
           <div id="box2" class="boxy" onclick="on2()"></div>
         </div>
         <div id="startOverlay" class="overlay">
-          <div id="pickerG" class="picker"></div>
-          <button onclick="off()" id="hideSOverlay">off</button>
+          <div id="pickerS" class="picker"></div>
+          <button onclick="off()" id="hideSOverlay" class="offButton">off</button>
         </div>
         <div id="endOverlay" class="overlay">
-          <button onclick="off()" id="hideEOverlay">off2</button>
+          <div id="pickerE" class="picker"></div>
+          <button onclick="off()" id="hideEOverlay" class="offButton">off2</button>
         </div>
         <h1>gradient Generator</h1>
         <div class="">
-          <label for="numSteps">How many intermediate colours would you like? (5 to 20): </label>
-          <input type="range" name="numSteps" id="numSteps" min="5" max="20" />
+          <label for="numSteps">How many intermediate colours would you like? (5 to 50): </label>
+          <input type="range" name="numSteps" id="numSteps" min="5" max="50" />
           <p>Steps: <output id="stepsVal"></output></p>
         </div>
         <br />
@@ -44,13 +45,13 @@
           "analogic", "complement", "analogic-complement", "triad", "quad")
         </p>
         <p class="scheme">Default count: 5 colors</p>
-        <div id="pickerS" class="scheme picker"></div>
         <!--
     <input type="text" name="" value="" placeholder="enter a hex colour" id="colour1" class="scheme" onclick="reset()">
     <input type="text" name="" value="" placeholder="enter a mode" id="mode" class="scheme" onclick="reset()">
     <input type="button" name="" value="Submit" id="submit1" onclick="submit(event)" class="scheme">
     <br>-->
         <div id="multi" class="scheme"></div>
+        <div id="grad"></div>
       </div>
     </div>
     <script src="index.js"></script>
