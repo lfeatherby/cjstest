@@ -53,6 +53,7 @@ $(document).ready(function () {
         currentColour = colourPickerS.color.hexString.slice(1);
         submit();
         var x = getGradient(colour1, colour2, gradientSteps);
+        // console.log(x.size);
         showGradient(x);
         console.log(x);
     });
@@ -85,8 +86,9 @@ colourPickerS.on(['input:end'], function (color) {
         colour1.srgb.r = data.rgb["r"];
         colour1.srgb.g = data.rgb["g"];
         colour1.srgb.b = data.rgb["b"];
-        console.log(colour1);
+        //console.log(colour1);
         colour1src = data.image["bare"];
+        console.log(colour1src);
         //pic.src = data.image['bare'];
         //multi.appendChild(pic);
     }
@@ -185,18 +187,18 @@ function getGradient(c1, c2, gsteps) {
     str1 = "r=" + r;
     console.log(str1);
     //deltaEMethod?
-    var stops = Color.steps(r, { space: "xyz", outputSpace: "lch", steps: gsteps, maxDeltaE: 3 });
+    var stops = Color.steps(r, { space: "xyz", outputSpace: "lch", maxSteps: gsteps, maxDeltaE: 3 });
     str2 = "stops=" + stops;
     console.log(str2);
-    var gradi = c1.steps(c2, {
-        space: "xyz",
-        outputSpace: "lch",
-        maxDeltaE: 3,
-        maxSteps: gsteps
-    });
+    // var gradi = c1.steps(c2, {
+    //   space: "xyz",
+    // outputSpace: "lch",
+    // maxDeltaE: 3,
+    // maxSteps: gsteps
+    // });
     console.log(stops.length);
     var pics = new Set();
-    pics.add(colour1src);
+    //pics.add(colour1src);
     // Open a new connection, using the GET request on the URL endpoint
     //currentMode = document.getElementById('mode').value
     //currentCount = document.getElementById('count').value
